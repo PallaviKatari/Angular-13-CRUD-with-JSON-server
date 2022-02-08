@@ -52,4 +52,14 @@ export class DashboardComponent implements OnInit {
     })
   }
 
+  deleteAccounts(account: any){
+    this.api.deleteAccounts(account.id).subscribe(res=>{
+      alert("The Account deleted!")
+      this.getAccounts();
+    }), 
+    ({
+
+    })
+  }
+
 }
