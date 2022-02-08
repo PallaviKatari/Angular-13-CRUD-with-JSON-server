@@ -3,7 +3,7 @@
     <h1 style="color: aliceblue; font-size: 20px;">Angular 13 CRUD with Json-server</h1>
     <div class="d-flex">
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <button (click)="clickAddAccount()" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Add Account
       </button>
     </div>
@@ -28,7 +28,9 @@
       <td>{{account.mobile}}</td>
       <td>{{account.status}}</td>
       <td>
-        <button class="btn btn-primary">Edit</button>&nbsp;
+        <button (click)="onEdit(account)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Edit
+        </button>&nbsp;
         <button (click)="deleteAccounts(account)" class="btn btn-danger">Delete</button>
       </td>
     </tr>
@@ -65,7 +67,8 @@
       </div>
       <div class="modal-footer">
         <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" (click)="postAccountDetails()" class="btn btn-primary">Add</button>
+        <button type="button" *ngIf="showAdd" (click)="postAccountDetails()" class="btn btn-primary">Add</button>
+        <button type="button" *ngIf="showUpdate" (click)="updateAccountDetails()" class="btn btn-warning">Update</button>
       </div>
     </div>
   </div>

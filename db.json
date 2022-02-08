@@ -1,13 +1,6 @@
 {
   "posts": [
     {
-      "id": 2,
-      "name": "MisterBrown",
-      "email": "mb@gmail.com",
-      "mobile": "12345678910",
-      "status": "active"
-    },
-    {
       "id": 3,
       "name": "MirsterDemo",
       "email": "md@gmail.com",
@@ -27,6 +20,13 @@
       "email": "missa@gmail.com",
       "mobile": "12345678910",
       "status": "inactive"
+    },
+    {
+      "id": 2,
+      "name": "MisterBrown",
+      "email": "mbrown@gmail.com",
+      "mobile": "12345",
+      "status": "active"
     }
   ],
   "comments": [],
