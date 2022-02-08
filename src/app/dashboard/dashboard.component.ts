@@ -11,6 +11,7 @@ import { ApiService } from '../shared/api.service';
 export class DashboardComponent implements OnInit {
   formValue!: FormGroup;
   accountModelObj : accountModel = new accountModel();
+  accountData!: any;
 
   constructor(private formbuilder: FormBuilder, private api:ApiService) { }
 
@@ -21,6 +22,7 @@ export class DashboardComponent implements OnInit {
       mobile:[''],
       status:[''],
     })
+    this.getAccounts();
   }
 
   postAccountDetails(){
@@ -32,9 +34,21 @@ export class DashboardComponent implements OnInit {
     this.api.postAccounts(this.accountModelObj).subscribe(res=>{
       console.log(res);
       alert("New account added successfully!")
+      let ref = document.getElementById('cancel')
+      ref?.click();
+      this.formValue.reset();
+      this.getAccounts();
     },
     err=>{
       alert("Something went wrong. Please check again!")
+    })
+  }
+
+  getAccounts(){
+    this.api.getAccounts().subscribe(res=>{
+      this.accountData = res;
+    }, err=>{
+      
     })
   }
 

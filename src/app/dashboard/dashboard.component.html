@@ -21,12 +21,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>1</td>
-      <td>MisterDemo</td>
-      <td>md@gmail.com</td>
-      <td>12345678910</td>
-      <td>Active</td>
+    <tr *ngFor="let account of accountData">
+      <td>{{account.id}}</td>
+      <td>{{account.name}}</td>
+      <td>{{account.email}}</td>
+      <td>{{account.mobile}}</td>
+      <td>{{account.status}}</td>
       <td>
         <button class="btn btn-primary">Edit</button>&nbsp;
         <button class="btn btn-danger">Delete</button>
@@ -64,7 +64,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" (click)="postAccountDetails()" class="btn btn-primary">Add</button>
       </div>
     </div>
