@@ -9,6 +9,7 @@ Copy-paste the stylesheet <link> into your /src/index.html <head>
 Include Bootstrap JavaScript bundle into your /src/index.html <body>
 
 npm install -g json-server
+json-server --watch db.json
 
 ## Development server
 
